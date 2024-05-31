@@ -1,14 +1,16 @@
 import { style } from "@vanilla-extract/css";
 
 export const HeaderStyle = style({
-    position: "absolute",
-    top: "0",
+    "&.is-home": {
+        position: "absolute",
+        top: "0",
+        zIndex: 2025,
+    },
     width: "100%",
     height: "var(--header-height)",
     borderBottom: "1px solid rgba(255, 255, 255, 0.20)",
     display: "flex",
     alignItems: "center",
-    zIndex: 2025,
     ".container": {
         height: "100%",
         borderLeft: "1px solid rgba(255,255, 255, 0.20)",
@@ -56,6 +58,10 @@ export const styleLinksHeader = style({
             fontSize: "1.4rem",
             color: "var(--gray-100)",
             position: "relative",
+            transition: "color .3s ease",
+            "&:hover": {
+                color: "var(--white)",
+            },
             "div": {
                 position: "absolute",
                 left: "0rem",
