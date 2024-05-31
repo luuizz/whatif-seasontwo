@@ -1,9 +1,15 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Poppins } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import './app.css'
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ 
+  subsets: ["latin"], 
+  weight: ["400", "600", "700"],
+  display: "swap",
+  variable: "--font-poppins",
+  adjustFontFallback: false
+});
 
 export const metadata = {
   title: "What if...? | Codeboost",
@@ -13,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <Header />
         {children}
         <Footer />
