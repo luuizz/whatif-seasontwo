@@ -1,17 +1,22 @@
-import { socials } from '@/app/data'
-import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import { StyleSocials, areaListSocial, listSocialItem } from './style.css'
+import { PrismicNextImage } from '@prismicio/next'
 
-export default function Socials() {
+export default function Socials({ dataComponentSocials }) {
+
+  const data = dataComponentSocials.data;
+
   return (
     <div className={`${StyleSocials} socials`}>
         <ul className={areaListSocial}>
-            {socials.map((socialLink, index) => (
+            {data.cadastrar_redes_sociais.map((item, index) => (
             <li className={listSocialItem} key={index}>
-                <Link href={socialLink.url} title={`Ir para ${socialLink.title}`}>
-                    <Image src={socialLink.icon} alt={`Ícone do ${socialLink.title}`} />
+                <Link href={item.link_social.url} title={`Ir para ${item.title_social}`}>
+                    <PrismicNextImage
+                        field={item.icone_social} 
+                        width={item.icone_social.dimensions.width}
+                        height={item.icone_social.dimensions.height}
+                    />
                 </Link>
             </li>
             ))}

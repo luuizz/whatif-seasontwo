@@ -31,6 +31,17 @@ interface ConfiguracoesDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
+   * Meta Keywords field in *Configurações*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: configuracoes.meta_keywords
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_keywords: prismic.KeyTextField;
+
+  /**
    * OG Image field in *Configurações*
    *
    * - **Field Type**: Image
@@ -131,6 +142,28 @@ interface HomeDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   texto_hero: prismic.RichTextField;
+
+  /**
+   * Label Button Hero field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.label_button_hero
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label_button_hero: prismic.KeyTextField;
+
+  /**
+   * Link Button Hero field in *Home*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.link_button_hero
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_button_hero: prismic.LinkField;
 
   /**
    * Cadastrar redes sociais field in *Home*
@@ -280,17 +313,6 @@ interface PersonagensDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Personagens*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: personagens.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
 
   /**
    * Meta Title field in *Personagens*

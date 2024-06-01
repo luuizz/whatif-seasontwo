@@ -1,13 +1,12 @@
 import { style } from "@vanilla-extract/css";
-import heroBackgroundDesk from "@/assets/bg-desk.jpg"
-import videoBackground from "@/assets/image-video.png"
+
 
 export const StyleHeroSection = style({
     position: "relative",
     zIndex: 1,
     width: "100%",
     height: "73.1rem",
-    background: `url(${heroBackgroundDesk.src}) no-repeat top center`,
+    // background: `url(${heroBackgroundDesk.src}) no-repeat top center`,
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
     paddingTop: "var(--header-height)",
@@ -83,7 +82,6 @@ export const videoPlayStyle = style({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: "1rem",
-    background: `url(${videoBackground.src}) no-repeat center center`,
     backgroundSize: "cover",
     ":hover": {
         ".play": {

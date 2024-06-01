@@ -36,6 +36,21 @@
           "single": "paragraph,strong,em"
         }
       },
+      "label_button_hero": {
+        "type": "Text",
+        "config": {
+          "label": "Label Button Hero",
+          "placeholder": ""
+        }
+      },
+      "link_button_hero": {
+        "type": "Link",
+        "config": {
+          "label": "Link Button Hero",
+          "placeholder": "",
+          "select": null
+        }
+      },
       "cadastrar_redes_sociais": {
         "type": "Group",
         "config": {

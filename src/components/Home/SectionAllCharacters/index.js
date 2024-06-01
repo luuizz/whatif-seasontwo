@@ -4,7 +4,8 @@ import Image from 'next/image'
 import logoMarvel from "@/assets/logo-marvel.png"
 import { cardMarvel, styleCharacterSection, styleTitleCharacter } from './style.css'
 
-export default function HomeSectionTodosPersonagens() {
+export default function HomeSectionTodosPersonagens({ dataPage }) {
+
   return (
     <section className={styleCharacterSection}>
         <div className="container">
@@ -14,7 +15,7 @@ export default function HomeSectionTodosPersonagens() {
             </div>
 
             <div className='all-characters'>
-                <CardPersonagem />
+                <CardPersonagem dataApi={dataPage} />
                 <div className={`${cardMarvel} marvel`}>
                     <Image src={logoMarvel} alt='logo da marvel' />
                 </div>

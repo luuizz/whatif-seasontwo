@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import './app.css'
+import { createClient } from "@/prismicio";
 
 const poppins = Poppins({ 
   subsets: ["latin"], 
@@ -11,10 +12,25 @@ const poppins = Poppins({
   adjustFontFallback: false
 });
 
-export const metadata = {
-  title: "What if...? | Codeboost",
-  description: "Projeto do realizado durante o curso do Codeboost, com o intuito de utilizar a API do Prismic",
-};
+export async function generateMetadata() {
+
+  const client = createClient();
+
+  const page = await client.getSingle("configuracoes");
+
+  return {
+    title: page.data.site_title || "What if...? | Codeboost",
+    description: page.data.meta_description || "Projeto do curso Codeboost",
+    openGraph: {
+      images: [page.data.og_image.url || ""],
+    },
+    keywords: [page.data.meta_keywords || ""],
+    twitter: {
+      title: page.data.site_title || "What if...? | Codeboost",
+      images: [page.data.og_image.url || ""],
+    }
+  }
+}
 
 export default function RootLayout({ children }) {
   return (

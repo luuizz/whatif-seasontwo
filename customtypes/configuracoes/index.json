@@ -20,6 +20,13 @@
           "placeholder": ""
         }
       },
+      "meta_keywords": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Keywords",
+          "placeholder": ""
+        }
+      },
       "og_image": {
         "type": "Image",
         "config": {
