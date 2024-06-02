@@ -2,7 +2,11 @@ import { style } from "@vanilla-extract/css";
 
 export const styleTemporarySection = style({
     padding: "28rem 0",
-
+    '@media': {
+        '(max-width: 560px)': {
+            padding: "13rem 0",
+        }
+    }
 })
 
 export const containerTemporary = style({
@@ -10,6 +14,12 @@ export const containerTemporary = style({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
+    padding: "0 1.5rem",
+    '@media': {
+        '(max-width: 768px)': {
+            textAlign: "center",
+        }
+    }
 })
 
 export const titleTemporary = style({

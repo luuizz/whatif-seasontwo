@@ -2,24 +2,59 @@ import { style } from "@vanilla-extract/css";
 
 export const styleCharacterSection = style({
     padding: "5.6rem 0 7.2rem",
-    ".container": {
-        ".title": {
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "5.6rem",
-            "span": {
-                fontSize: "1.8rem",
-                lineHeight: "2.7rem",
-                opacity: 0.4,
-                marginRight: "11.3rem",
-            },
+    '@media': {
+        '(max-width: 991px)': {
+            paddingTop: "6rem",
+        }
+    }
+})
+
+export const containerAllCharacterStyle = style({
+    '@media': {
+        '(max-width: 1300px)': {
+            padding: "0 1.5rem",
+        }
+    }
+})
+
+export const styleTopCharacterAll = style({
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "5.6rem",
+    '@media': {
+        '(max-width: 991px)': {
+            justifyContent: "center",
         },
-        ".all-characters": {
-            display: "grid",
-            gridTemplateColumns: "repeat(4,1fr)",
-            gridGap: "4rem 3.3rem",
+    }
+})
+
+export const styleTextCharacterAll = style({
+    fontSize: "1.8rem",
+    lineHeight: "2.7rem",
+    opacity: 0.4,
+    marginRight: "11.3rem",
+    '@media': {
+        '(max-width: 560px)': {
+            marginRight: "4.3rem",
+        }
+    }
+})
+
+export const styleListCharactersAll = style({
+    display: "grid",
+    gridTemplateColumns: "repeat(4,1fr)",
+    gridGap: "4rem 3.3rem",
+    "@media": {
+        "(max-width: 1200px)": {
+            gridTemplateColumns: "repeat(3, 1fr)",
         },
-    },
+        "(max-width: 991px)": {
+            gridTemplateColumns: "repeat(2, 1fr)",
+        },
+        "(max-width: 560px)": {
+            gridTemplateColumns: "1fr",
+        },
+    }
 })
 
 export const styleTitleCharacter = style({
@@ -91,6 +126,11 @@ export const styleCardCharacter = style({
             lineHeight: "150%",
             color: "var(--gray-500)"
         }
+    },
+    "@media": {
+        "(max-width: 1200px)": {
+            maxWidth: "100%",
+        }
     }
 })
 
@@ -102,4 +142,15 @@ export const cardMarvel = style({
     justifyContent: "center",
     border: "1px solid var(--gray-900)",
     borderRadius: 4,
+    '@media': {
+        '(max-width: 1200px)': {
+            width: "100%",
+        },
+        "(max-width: 991px)": {
+            height: "100%",
+        },
+        "(max-width: 560px)": {
+            height: "48rem",
+        }
+    }
 })

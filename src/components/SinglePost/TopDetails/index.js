@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 import killmonger from "@/assets/character-killmonger.png"
-import { infoDetail, styleAreaInfo, styleContainer, styleImageDetail, styleSectionDetails } from './style.css'
+import { infoDetail, spanAreaInfo, styleAreaInfo, styleContainer, styleImageDetail, styleSectionDetails, textDetail, titleDetail } from './style.css'
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicRichText } from '@prismicio/react';
 
 const components = {
   paragraph: ({children}) => (
-    <p>{children}</p>
+    <p className={textDetail}>{children}</p>
   )
 }
 
@@ -20,14 +20,14 @@ export default async function TopDetailsSingle({ dataPage }) {
       <div className={`${styleContainer} container`}>
         <div className={`${styleImageDetail} image`}>
           <PrismicNextImage 
-          field={data.imagem_personagem} 
+          field={data.imagem_personagem}
           />
         </div>
 
         <div className={`${styleAreaInfo} info`}>
-          <span>A história</span>
+          <span className={spanAreaInfo}>A história</span>
           <div className={infoDetail}>
-            <h1>{data.nome_personagem}</h1>
+            <h1 className={titleDetail} >{data.nome_personagem}</h1>
             <PrismicRichText 
             field={data.descricao_personagem} 
             components={components}

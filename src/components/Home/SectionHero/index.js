@@ -4,7 +4,7 @@ import Video from './Video'
 import Btn from '@/components/Btn'
 import { StyleHeroSection, containerStyleHero, contentStyleHero, styleMainAreaHero, tagTitleStyle, textHeroStyle, titleHeroStyle } from './style.css'
 import { PrismicRichText } from '@prismicio/react'
-import heroBackgroundDesk from "@/assets/bg-desk.jpg"
+import bannerHero from "@/assets/banner-hero.webp"
 
 const components = {
   paragraph: ({children}) => (
@@ -17,7 +17,7 @@ export default function HomeSectionHero({ dataPage }) {
   const dataAPi = dataPage.data;
 
   return (
-    <section className={StyleHeroSection} style={{background: `url(${heroBackgroundDesk.src}) no-repeat top center`}}>
+    <section className={StyleHeroSection} style={{background: `url(${bannerHero.src}) no-repeat top center`}}>
       <div className={`${containerStyleHero} container`}>
         <Socials dataComponentSocials={dataPage} />
 
