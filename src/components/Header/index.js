@@ -9,6 +9,7 @@ import { HeaderStyle, areaCodeHeaderStyle, asideContainerStyle, asideGroupList, 
 import { usePathname } from 'next/navigation'
 import Hamburger from 'hamburger-react'
 import NavMobile from './NavMobile'
+import LogoMarvel from './Logo'
 
 export default function Header() {
 
@@ -36,7 +37,7 @@ export default function Header() {
         <div className={`${containerHeaderStyle} container`}>
           <div className={stylelogoSpace}>
             <Link href="/" title='Página inicial'>
-              <Image src={logoMarvel} alt='Logo da Marvel Studios' />
+              <LogoMarvel />
             </Link>
           </div>
 
