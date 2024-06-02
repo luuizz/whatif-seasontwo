@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
 import { linksHeader } from '@/app/data'
-import { styleLinksHeader } from './style.css'
+import { detailNavigation, linkNavigation, styleLinksHeader } from './style.css'
 import { usePathname } from 'next/navigation'
 
 export default function Navigation() {
@@ -15,11 +15,11 @@ export default function Navigation() {
         {
             linksHeader.map((item, index) => (
                 <li key={index}>
-                    <Link href={item.path} title={`Ir para ${item.title}`}>
+                    <Link href={item.path} className={linkNavigation} title={`Ir para ${item.title}`}>
                         {item.path === pathName && (
-                        <   motion.div
-                        layoutId='underline'
-                        
+                        <motion.div
+                        layoutId='selected'
+                        className={detailNavigation}   
                         />
                         )}
                         {item.label}

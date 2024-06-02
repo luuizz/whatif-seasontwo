@@ -11,25 +11,52 @@ export const HeaderStyle = style({
     borderBottom: "1px solid rgba(255, 255, 255, 0.20)",
     display: "flex",
     alignItems: "center",
-    ".container": {
-        height: "100%",
-        borderLeft: "1px solid rgba(255,255, 255, 0.20)",
-        borderRight: "1px solid rgba(255,255, 255, 0.20)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        "nav": {
-            display: "flex",
-            paddingRight: "2.4rem",
-            height: "100%",
-            ".code": {
-                borderLeft: "1px solid rgba(255,255, 255, 0.20)",
-                paddingLeft: "2.4rem",
-                display: "flex",
-                alignItems: "center"
-            }
+    ".hamburger-react": {
+        display: "none",
+    },
+    '@media': {
+        '(max-width: 991px)': {
+            ".hamburger-react": {
+                display: "block",
+            },
         }
     }
+})
+
+export const menuHeaderStyle = style({
+    display: "none",
+    '@media': {
+        '(max-width: 991px)': {
+            display: "block",
+        }
+    }
+})
+
+export const containerHeaderStyle = style({
+    height: "100%",
+    borderLeft: "1px solid rgba(255,255, 255, 0.20)",
+    borderRight: "1px solid rgba(255,255, 255, 0.20)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+})
+
+export const navHeaderStyle = style({
+    display: "flex",
+    paddingRight: "2.4rem",
+    height: "100%",
+    '@media': {
+        '(max-width: 991px)': {
+            display: "none",
+        }
+    }
+})
+
+export const areaCodeHeaderStyle = style({
+    borderLeft: "1px solid rgba(255,255, 255, 0.20)",
+    paddingLeft: "2.4rem",
+    display: "flex",
+    alignItems: "center"
 })
 
 export const stylelogoSpace = style({
@@ -53,24 +80,59 @@ export const styleLinksHeader = style({
     alignItems: "center",
     gap: 24,
     paddingRight: "4rem",
-    "li": {
-        "a": {
-            fontSize: "1.4rem",
-            color: "var(--gray-100)",
-            position: "relative",
-            transition: "color .3s ease",
-            "&:hover": {
-                color: "var(--white)",
-            },
-            "div": {
-                position: "absolute",
-                left: "0rem",
-                top: "100%",
-                display: "block",
-                height: "0.1rem",
-                backgroundColor: "var(--red-900)",
-                width: "100%",
-            }
-        },
+})
+
+export const linkNavigation = style({
+    fontSize: "1.4rem",
+    color: "var(--gray-100)",
+    position: "relative",
+    transition: "color .3s ease",
+    ":hover": {
+        color: "var(--white)",
+    }
+})
+
+export const detailNavigation = style({
+    position: "absolute",
+    left: "0rem",
+    top: "100%",
+    display: "block",
+    height: "0.1rem",
+    backgroundColor: "var(--red-900)",
+    width: "100%",
+})
+
+export const asideMenuStyle = style({
+    padding: "6.4rem 0px",
+    width: "100%",
+    height: "calc(100vh - var(--header-height))",
+    backgroundColor: 'var(--black)',
+    opacity: 0,
+    pointerEvents: "none",
+    top: "var(--header-height)",
+    transition: "all 0.3s ease 0s",
+    transform: "translateY(100%)",
+    zIndex: 50,
+    position: "fixed",
+    "&.open": {
+        pointerEvents: "all",
+        opacity: 1,
+        transform: "translateY(0px)",
     },
 })
+
+export const asideContainerStyle = style({
+    padding: "0 2.4rem",
+})
+
+export const asideGroupList = style({
+    display: "flex",
+    flexDirection: "column",
+    gap: "4rem"
+})
+
+export const asideListItem = style({
+    fontSize: "2.4rem",
+    color: "var(--white)",
+})
+
