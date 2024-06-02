@@ -91,12 +91,11 @@
           "thumbnails": []
         }
       },
-      "link_trailer": {
-        "type": "Link",
+      "id_do_video": {
+        "type": "Text",
         "config": {
-          "label": "Link Trailer",
-          "placeholder": "",
-          "select": null
+          "label": "ID do vídeo",
+          "placeholder": "Informar somente o ID do vídeo"
         }
       },
       "slices": {
@@ -108,6 +107,13 @@
       }
     },
     "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
       "meta_description": {
         "config": {
           "label": "Meta Description",
@@ -125,13 +131,6 @@
           "thumbnails": []
         },
         "type": "Image"
-      },
-      "meta_title": {
-        "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
-        },
-        "type": "Text"
       }
     }
   }
